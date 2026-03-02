@@ -6,16 +6,16 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 14:50:40 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/02 14:47:18 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/02 15:46:39 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -38,7 +38,7 @@ class Bureaucrat
     const std::exception GradeTooHighException(void);
     const std::exception GradeTooLowException(void);
 
-    void signForm(Form &f);
+    void signForm(AForm &f);
 };
 
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &b);

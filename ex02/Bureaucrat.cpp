@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 14:51:39 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/02 15:35:12 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/02 15:46:33 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ std::ostream& operator<<(std::ostream &os, const Bureaucrat &b)
     return (os);
 }
 
-void Bureaucrat::signForm(Form &f)
+void Bureaucrat::signForm(AForm &f)
 {
     f.beSigned(*this);
     if (f.getIsSigned() == true)
