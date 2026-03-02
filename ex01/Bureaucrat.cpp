@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 14:51:39 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/02 11:26:30 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/02 15:35:12 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,14 @@ int Bureaucrat::getGrade(void) const
 const std::exception Bureaucrat::GradeTooHighException(void)
 {
     const std::exception e;
-    std::cout << "error: grade too high!\n";
+    std::cout << "error: bureaucrat grade too high!\n";
     return (e);
 }
 
 const std::exception Bureaucrat::GradeTooLowException(void)
 {
     const std::exception e;
-    std::cout << "error: grade too low!\n";
+    std::cout << "error: bureaucrat grade too low!\n";
     return (e);
 }
 
@@ -89,4 +89,13 @@ std::ostream& operator<<(std::ostream &os, const Bureaucrat &b)
 {
     os << b.getName() << ", bureaucrat grade " << b.getGrade() << "\n";
     return (os);
+}
+
+void Bureaucrat::signForm(Form &f)
+{
+    f.beSigned(*this);
+    if (f.getIsSigned() == true)
+        std::cout << this->getName() << " signed " << f.getName() << "\n";
+    else
+        std::cout << this->getName() << " couldn’t sign " << f.getName() << " because this bureacrat grade is too low to sign this form\n";
 }

@@ -6,39 +6,23 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 14:50:29 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/02 11:26:15 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/02 15:33:14 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(void)
 {
     try
     {
-        Bureaucrat test;
-        std::cout << test;
-        Bureaucrat bob("bob", 14);
+        Bureaucrat bob("bob", 12);
         std::cout << bob;
-        bob.operator++();
-        std::cout << bob;
-        bob.operator++();
-        std::cout << bob;
-        bob.operator++();
-        std::cout << bob;
-        Bureaucrat annie(bob);
-        std::cout << annie;
-        annie.operator--();
-        annie.operator--();
-        annie.operator--();
-        std::cout << annie;
-        Bureaucrat paul("paul", 150);
-        paul.operator++();
-        paul.operator++();
-        paul.operator++();
-        std::cout << paul;
-        paul.operator--();
-        std::cout << paul;
+        Form petition("petition pour les abeilles", 119, 12);
+        std::cout << petition;
+        bob.signForm(petition);
+        std::cout << petition;
     }
     catch(const std::exception& e)
     {
