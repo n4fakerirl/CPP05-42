@@ -6,16 +6,11 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 10:59:43 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/02 15:32:12 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/02 17:59:48 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
-
-    // const std::string _name;
-    // bool _signed;
-    // const int _grade_sign;
-    // const int _grade_exec;
 
 Form::Form() : _name("default"), _grade_sign(150), _grade_exec(150)
 {
