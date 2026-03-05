@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 14:50:29 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 12:26:38 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 12:35:00 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 
 int main(void)
 {
-    AForm *petition = new RobotomyRequestForm("nova");
+    AForm *petition = new PresidentialPardonForm("nova");
     try
     {
         std::cout << "---NEW BUREAUCRAT BOB---\n\n";
-        Bureaucrat bob("bob", 6);
+        Bureaucrat bob("bob", 5);
         std::cout << bob;
         std::cout << "\n\n---NEW SHRUBBERYCREATIONFORM---\n\n";   
         std::cout << *petition;

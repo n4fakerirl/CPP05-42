@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:55:19 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 11:58:25 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 12:35:21 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ std::string PresidentialPardonForm::getTarget(void) const
 void PresidentialPardonForm::formAction(Bureaucrat const &executor) const
 {
     this->execute(executor);
+    std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox.\n";
 }
 
 std::ostream& operator<<(std::ostream &os, const PresidentialPardonForm &f)
