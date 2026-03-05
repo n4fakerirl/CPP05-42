@@ -6,15 +6,15 @@
 #    By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/11 02:08:04 by ocviller          #+#    #+#              #
-#    Updated: 2026/03/05 09:32:01 by ocviller         ###   ########.fr        #
+#    Updated: 2026/03/05 13:04:50 by ocviller         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CFLAGS = -std=c++98 -Wall -Werror -Wextra
-NAME = form28B
-SRC = AForm.cpp main.cpp RobotomyRequestForm.cpp Bureaucrat.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp
-OBJ = AForm.o main.o RobotomyRequestForm.o Bureaucrat.o PresidentialPardonForm.o ShrubberyCreationForm.o
+NAME = intern
+SRC = AForm.cpp main.cpp RobotomyRequestForm.cpp Bureaucrat.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp Intern.cpp
+OBJ = AForm.o main.o RobotomyRequestForm.o Bureaucrat.o PresidentialPardonForm.o ShrubberyCreationForm.o Intern.o
 OPTIONS = -o $(NAME)
 
 all: $(OBJ)
