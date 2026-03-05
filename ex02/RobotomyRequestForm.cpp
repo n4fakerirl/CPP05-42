@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:38:24 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/02 16:44:54 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 09:53:32 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 	return (*this);
 }
 
-const std::exception RobotomyRequestForm::GradeTooHighException(std::string type)
+const std::exception RobotomyRequestForm::GradeTooHighException(std::string type) const
 {
     const std::exception e;
     if (type == "sign")
@@ -54,7 +54,7 @@ const std::exception RobotomyRequestForm::GradeTooHighException(std::string type
     return (e);
 }
 
-const std::exception RobotomyRequestForm::GradeTooLowException(std::string type)
+const std::exception RobotomyRequestForm::GradeTooLowException(std::string type) const
 {
     const std::exception e;
     if (type == "sign")

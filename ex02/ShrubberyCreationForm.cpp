@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:38:29 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/02 17:39:31 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 09:54:16 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return (*this);
 }
 
-const std::exception ShrubberyCreationForm::GradeTooHighException(std::string type)
+const std::exception ShrubberyCreationForm::GradeTooHighException(std::string type) const
 {
     const std::exception e;
     if (type == "sign")
@@ -54,7 +54,7 @@ const std::exception ShrubberyCreationForm::GradeTooHighException(std::string ty
     return (e);
 }
 
-const std::exception ShrubberyCreationForm::GradeTooLowException(std::string type)
+const std::exception ShrubberyCreationForm::GradeTooLowException(std::string type) const
 {
     const std::exception e;
     if (type == "sign")
@@ -96,21 +96,17 @@ void ShrubberyCreationForm::beSigned(Bureaucrat &b)
         this->_signed = true;
 }
 
-int ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
     if (this->getIsSigned() == false)
-        return (0);
+        throw this->GradeTooLowException("bureaucrat sign");
     if (executor.getGrade() > this->getGradeExec())
-        return (1);
-    return (2);
+        throw this->GradeTooLowException("bureaucrat exec");
 }
 
 void ShrubberyCreationForm::execShrubbery(Bureaucrat const &executor)
 {
-    if (this->execute(executor) == 0)
-        throw this->GradeTooLowException("bureaucrat sign");
-    else if (this->execute(executor) == 1)
-        this->GradeTooLowException("bureaucrat exec");
+    this->execute(executor);
     std::string filename = this->_target + "_shrubbery";
     std::ofstream file;
     file.open(filename.c_str());

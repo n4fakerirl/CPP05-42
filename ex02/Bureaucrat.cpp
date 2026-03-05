@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 14:51:39 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/02 15:46:33 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 09:53:50 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,14 @@ int Bureaucrat::getGrade(void) const
     return (this->_grade);
 }
 
-const std::exception Bureaucrat::GradeTooHighException(void)
+const std::exception Bureaucrat::GradeTooHighException(void) const
 {
     const std::exception e;
     std::cout << "error: bureaucrat grade too high!\n";
     return (e);
 }
 
-const std::exception Bureaucrat::GradeTooLowException(void)
+const std::exception Bureaucrat::GradeTooLowException(void) const
 {
     const std::exception e;
     std::cout << "error: bureaucrat grade too low!\n";

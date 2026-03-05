@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 14:50:40 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/02 15:46:39 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 09:53:15 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ class Bureaucrat
     void operator++(void);
     void operator--(void);
     
-    const std::exception GradeTooHighException(void);
-    const std::exception GradeTooLowException(void);
+    const std::exception GradeTooHighException(void) const;
+    const std::exception GradeTooLowException(void) const;
 
     void signForm(AForm &f);
 };

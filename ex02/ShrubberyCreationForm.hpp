@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:38:31 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/02 17:31:36 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 09:49:02 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ class ShrubberyCreationForm : public AForm
     ShrubberyCreationForm& operator=(const ShrubberyCreationForm &other);
     virtual ~ShrubberyCreationForm();
 
-    const std::exception GradeTooHighException(std::string type);
-    const std::exception GradeTooLowException(std::string type);
+    const std::exception GradeTooHighException(std::string type) const;
+    const std::exception GradeTooLowException(std::string type) const;
 
     std::string getTarget(void) const;
     bool getIsSigned(void) const;
@@ -42,7 +42,7 @@ class ShrubberyCreationForm : public AForm
     int getGradeExec(void) const;
 
     void beSigned(Bureaucrat &b);
-    int execute(Bureaucrat const & executor) const;
+    void execute(Bureaucrat const &executor) const;
     void execShrubbery(Bureaucrat const &executor);
 };
 

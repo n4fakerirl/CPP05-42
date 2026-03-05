@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:55:19 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/02 16:48:39 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 09:53:24 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 	return (*this);
 }
 
-const std::exception PresidentialPardonForm::GradeTooHighException(std::string type)
+const std::exception PresidentialPardonForm::GradeTooHighException(std::string type) const
 {
     const std::exception e;
     if (type == "sign")
@@ -54,7 +54,7 @@ const std::exception PresidentialPardonForm::GradeTooHighException(std::string t
     return (e);
 }
 
-const std::exception PresidentialPardonForm::GradeTooLowException(std::string type)
+const std::exception PresidentialPardonForm::GradeTooLowException(std::string type) const
 {
     const std::exception e;
     if (type == "sign")

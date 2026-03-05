@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:44:58 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/02 16:25:37 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 09:52:58 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ AForm& AForm::operator=(const AForm &other)
 	return (*this);
 }
 
-const std::exception AForm::GradeTooHighException(std::string type)
+const std::exception AForm::GradeTooHighException(std::string type) const
 {
     const std::exception e;
     if (type == "sign")
@@ -54,7 +54,7 @@ const std::exception AForm::GradeTooHighException(std::string type)
     return (e);
 }
 
-const std::exception AForm::GradeTooLowException(std::string type)
+const std::exception AForm::GradeTooLowException(std::string type) const
 {
     const std::exception e;
     if (type == "sign")

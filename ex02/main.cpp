@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 14:50:29 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/02 17:39:56 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 09:36:07 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main(void)
         std::cout << "\nTEST ICI\n\n";
         std::cout << a;
         bob.signForm(a);
-        a.execShrubbery(bob);
+        a.execute(bob);
         std::cout << "\n\nTEST FINI\n\n";
         delete petition;
     }
