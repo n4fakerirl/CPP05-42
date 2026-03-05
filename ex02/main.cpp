@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 14:50:29 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 11:33:25 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 11:58:46 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ int main(void)
     {
         std::cerr << e.what() << '\n';
     }
-    delete petition;
+    //delete petition;
 }

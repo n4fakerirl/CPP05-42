@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:38:29 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 11:13:46 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 11:54:57 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,37 +71,6 @@ const std::exception ShrubberyCreationForm::GradeTooLowException(std::string typ
 std::string ShrubberyCreationForm::getTarget(void) const
 {
     return (this->_target);
-}
-
-bool ShrubberyCreationForm::getIsSigned(void) const
-{
-    return (this->_signed);
-}
-
-int ShrubberyCreationForm::getGradeSign(void) const
-{
-    return (this->_grade_sign);
-}
-
-int ShrubberyCreationForm::getGradeExec(void) const
-{
-    return (this->_grade_exec);
-}
-
-void ShrubberyCreationForm::beSigned(Bureaucrat &b)
-{
-    if (b.getGrade() > this->getGradeSign())
-        throw this->GradeTooLowException("bureaucrat sign");
-    else
-        this->_signed = true;
-}
-
-void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
-{
-    if (this->getIsSigned() == false)
-        throw this->GradeTooLowException("bureaucrat sign");
-    if (executor.getGrade() > this->getGradeExec())
-        throw this->GradeTooLowException("bureaucrat exec");
 }
 
 void ShrubberyCreationForm::formAction(Bureaucrat const &executor) const

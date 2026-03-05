@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:38:24 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 10:12:58 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 11:58:29 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,35 +73,9 @@ std::string RobotomyRequestForm::getTarget(void) const
     return (this->_target);
 }
 
-bool RobotomyRequestForm::getIsSigned(void) const
+void RobotomyRequestForm::formAction(Bureaucrat const &executor) const
 {
-    return (this->_signed);
-}
-
-int RobotomyRequestForm::getGradeSign(void) const
-{
-    return (this->_grade_sign);
-}
-
-int RobotomyRequestForm::getGradeExec(void) const
-{
-    return (this->_grade_exec);
-}
-
-void RobotomyRequestForm::beSigned(Bureaucrat &b)
-{
-    if (b.getGrade() > this->getGradeSign())
-        throw this->GradeTooLowException("bureaucrat sign");
-    else
-        this->_signed = true;
-}
-
-void RobotomyRequestForm::execute(Bureaucrat const &executor) const
-{
-    if (this->getIsSigned() == false)
-        throw this->GradeTooLowException("bureaucrat sign");
-    if (executor.getGrade() > this->getGradeExec())
-        throw this->GradeTooLowException("bureaucrat exec");
+    this->execute(executor);
 }
 
 std::ostream& operator<<(std::ostream &os, const RobotomyRequestForm &f)

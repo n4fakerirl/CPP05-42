@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:55:19 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 11:36:08 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 11:58:25 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,36 +73,9 @@ std::string PresidentialPardonForm::getTarget(void) const
     return (this->_target);
 }
 
-bool PresidentialPardonForm::getIsSigned(void) const
+void PresidentialPardonForm::formAction(Bureaucrat const &executor) const
 {
-    return (this->_signed);
-}
-
-int PresidentialPardonForm::getGradeSign(void) const
-{
-    return (this->_grade_sign);
-}
-
-int PresidentialPardonForm::getGradeExec(void) const
-{
-    return (this->_grade_exec);
-}
-
-void PresidentialPardonForm::beSigned(Bureaucrat &b)
-{
-    if (b.getGrade() > this->getGradeSign())
-        throw this->GradeTooLowException("bureaucrat sign");
-    else
-        this->_signed = true;
-}
-
-void PresidentialPardonForm::execute(Bureaucrat const &executor) const
-{
-    std::cout << "\n\nHEY 2\n\n";
-    if (this->getIsSigned() == false)
-        throw this->GradeTooLowException("bureaucrat sign");
-    if (executor.getGrade() > this->getGradeExec())
-        throw this->GradeTooLowException("bureaucrat exec");
+    this->execute(executor);
 }
 
 std::ostream& operator<<(std::ostream &os, const PresidentialPardonForm &f)

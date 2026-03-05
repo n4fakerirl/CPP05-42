@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:44:58 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 11:34:34 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 11:53:47 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,24 +47,14 @@ AForm& AForm::operator=(const AForm &other)
 const std::exception AForm::GradeTooHighException(std::string type) const
 {
     const std::exception e;
-    if (type == "sign")
-        std::cout << "error: grade required to sign AForm is too high!\n";
-    else if (type == "exec")
-        std::cout << "error: grade required to execute AForm is too high!\n";
+    (void)type;
     return (e);
 }
 
 const std::exception AForm::GradeTooLowException(std::string type) const
 {
     const std::exception e;
-    if (type == "sign")
-        std::cout << "error: grade required to sign AForm is too low!\n";
-    else if (type == "exec")
-        std::cout << "error: grade required to execute AForm is too low!\n";
-    else if (type == "bureaucrat sign")
-        std::cout << "error: bureaucrat grade is too low to sign this AForm!\n";
-    else if ((type == "bureaucrat exec"))
-        std::cout << "error: bureaucrat grade is too low to execute this AForm!\n";
+    (void)type;
     return (e);
 }
 

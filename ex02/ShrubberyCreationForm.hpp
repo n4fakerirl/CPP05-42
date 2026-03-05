@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:38:31 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 11:11:25 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 12:00:01 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,7 @@ class ShrubberyCreationForm : public AForm
     const std::exception GradeTooLowException(std::string type) const;
 
     std::string getTarget(void) const;
-    bool getIsSigned(void) const;
-    int getGradeSign(void) const;
-    int getGradeExec(void) const;
-
-    void beSigned(Bureaucrat &b);
-    void execute(Bureaucrat const &executor) const;
+    
     void formAction(Bureaucrat const &executor) const;
 };
 

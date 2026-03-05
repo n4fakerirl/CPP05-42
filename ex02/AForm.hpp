@@ -32,17 +32,17 @@ class AForm
     AForm& operator=(const AForm &other);
     virtual ~AForm();
 
-    virtual const std::exception GradeTooHighException(std::string type) const;
-    virtual const std::exception GradeTooLowException(std::string type) const;
+    virtual const std::exception GradeTooHighException(std::string type) const = 0; //IMPLEMENTE
+    virtual const std::exception GradeTooLowException(std::string type) const = 0; //IMPLEMENTE
 
-    virtual std::string getName(void) const;
-    virtual bool getIsSigned(void) const;
-    virtual int getGradeSign(void) const;
-    virtual int getGradeExec(void) const;
+    virtual std::string getName(void) const; //DELETE
+    virtual bool getIsSigned(void) const; //DELETE
+    virtual int getGradeSign(void) const; //DELETE
+    virtual int getGradeExec(void) const; //DELETE
 
-    virtual void beSigned(Bureaucrat &b) = 0;
-    virtual void execute(Bureaucrat const &executor) const;
-    virtual void formAction(Bureaucrat const &executor) const;
+    virtual void beSigned(Bureaucrat &b); //DELETE
+    virtual void execute(Bureaucrat const &executor) const; //DELETE
+    virtual void formAction(Bureaucrat const &executor) const = 0; //IMPLEMENTE
 };
 
 std::ostream& operator<<(std::ostream &os, const AForm &f);
