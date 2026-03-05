@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:38:26 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 09:53:36 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 11:11:34 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ class RobotomyRequestForm : public AForm
     int getGradeExec(void) const;
 
     void beSigned(Bureaucrat &b);
+    void execute(Bureaucrat const &executor) const;
+   //void formAction(Bureaucrat const &executor) const;
 };
 
 std::ostream& operator<<(std::ostream &os, const RobotomyRequestForm &f);

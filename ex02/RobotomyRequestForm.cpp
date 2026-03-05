@@ -6,19 +6,19 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:38:24 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 09:53:32 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 10:12:58 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm(), _target("null"), _grade_sign(72), _grade_exec(45)
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), _target("null"), _grade_sign(72), _grade_exec(45)
 {
     this->_signed = false;
     std::cout << "Default RobotomyRequestForm constructor called\n";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm(), _target(target), _grade_sign(72), _grade_exec(45)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target), _grade_sign(72), _grade_exec(45)
 {
     this->_signed = false;
     std::cout << "RobotomyRequestForm constructor " << this->getName() << " called\n";
@@ -94,6 +94,14 @@ void RobotomyRequestForm::beSigned(Bureaucrat &b)
         throw this->GradeTooLowException("bureaucrat sign");
     else
         this->_signed = true;
+}
+
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const
+{
+    if (this->getIsSigned() == false)
+        throw this->GradeTooLowException("bureaucrat sign");
+    if (executor.getGrade() > this->getGradeExec())
+        throw this->GradeTooLowException("bureaucrat exec");
 }
 
 std::ostream& operator<<(std::ostream &os, const RobotomyRequestForm &f)

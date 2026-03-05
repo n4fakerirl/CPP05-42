@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 14:51:39 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 09:53:50 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 11:19:09 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,4 +98,11 @@ void Bureaucrat::signForm(AForm &f)
         std::cout << this->getName() << " signed " << f.getName() << "\n";
     else
         std::cout << this->getName() << " couldn’t sign " << f.getName() << " because this bureacrat grade is too low to sign this form\n";
+}
+
+void Bureaucrat::executeForm(AForm const &form) const
+{
+    form.execute(*this);
+    form.formAction(*this);
+    std::cout << "bureaucrat " << this->getName() << " executed " << form.getName() << "\n";
 }

@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 14:50:40 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 09:53:15 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 11:09:17 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ class Bureaucrat
     const std::exception GradeTooLowException(void) const;
 
     void signForm(AForm &f);
+    void executeForm(AForm const & form) const;
 };
 
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &b);

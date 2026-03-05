@@ -6,19 +6,19 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:38:29 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 09:54:16 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 11:13:46 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm(), _target("null"), _grade_sign(145), _grade_exec(137)
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137), _target("null"), _grade_sign(145), _grade_exec(137)
 {
     this->_signed = false;
     std::cout << "Default ShrubberyCreationForm constructor called\n";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm(), _target(target), _grade_sign(145), _grade_exec(137)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target), _grade_sign(145), _grade_exec(137)
 {
     this->_signed = false;
     std::cout << "ShrubberyCreationForm constructor " << this->getName() << " called\n";
@@ -104,7 +104,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
         throw this->GradeTooLowException("bureaucrat exec");
 }
 
-void ShrubberyCreationForm::execShrubbery(Bureaucrat const &executor)
+void ShrubberyCreationForm::formAction(Bureaucrat const &executor) const
 {
     this->execute(executor);
     std::string filename = this->_target + "_shrubbery";

@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:44:58 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 09:52:58 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 11:34:34 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,19 @@ void AForm::beSigned(Bureaucrat &b)
         throw this->GradeTooLowException("bureaucrat sign");
     else
         this->_signed = true;
+}
+
+void AForm::execute(Bureaucrat const &executor) const
+{
+    if (this->getIsSigned() == false)
+        throw this->GradeTooLowException("bureaucrat sign");
+    if (executor.getGrade() > this->getGradeExec())
+        throw this->GradeTooLowException("bureaucrat exec");
+}
+
+void AForm::formAction(Bureaucrat const &executor) const
+{
+    (void)executor;
 }
 
 std::ostream& operator<<(std::ostream &os, const AForm &f)

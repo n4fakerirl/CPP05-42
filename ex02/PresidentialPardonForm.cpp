@@ -6,19 +6,19 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:55:19 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 09:53:24 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 11:36:08 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm(), _target("null"), _grade_sign(25), _grade_exec(5)
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5), _target("null"), _grade_sign(25), _grade_exec(5)
 {
     this->_signed = false;
     std::cout << "Default PresidentialPardonForm constructor called\n";
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm(), _target(target), _grade_sign(25), _grade_exec(5)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), _target(target), _grade_sign(25), _grade_exec(5)
 {
     this->_signed = false;
     std::cout << "PresidentialPardonForm constructor " << this->getName() << " called\n";
@@ -94,6 +94,15 @@ void PresidentialPardonForm::beSigned(Bureaucrat &b)
         throw this->GradeTooLowException("bureaucrat sign");
     else
         this->_signed = true;
+}
+
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const
+{
+    std::cout << "\n\nHEY 2\n\n";
+    if (this->getIsSigned() == false)
+        throw this->GradeTooLowException("bureaucrat sign");
+    if (executor.getGrade() > this->getGradeExec())
+        throw this->GradeTooLowException("bureaucrat exec");
 }
 
 std::ostream& operator<<(std::ostream &os, const PresidentialPardonForm &f)

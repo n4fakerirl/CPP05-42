@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:38:31 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 09:49:02 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 11:11:25 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class ShrubberyCreationForm : public AForm
 
     void beSigned(Bureaucrat &b);
     void execute(Bureaucrat const &executor) const;
-    void execShrubbery(Bureaucrat const &executor);
+    void formAction(Bureaucrat const &executor) const;
 };
 
 std::ostream& operator<<(std::ostream &os, const ShrubberyCreationForm &f);
