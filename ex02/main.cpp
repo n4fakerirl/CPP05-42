@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 14:50:29 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 11:58:46 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 12:26:38 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 
 int main(void)
 {
-    AForm *petition = new ShrubberyCreationForm("abeilles");
+    AForm *petition = new RobotomyRequestForm("nova");
     try
     {
         std::cout << "---NEW BUREAUCRAT BOB---\n\n";
-        Bureaucrat bob("bob", 19);
+        Bureaucrat bob("bob", 6);
         std::cout << bob;
         std::cout << "\n\n---NEW SHRUBBERYCREATIONFORM---\n\n";   
         std::cout << *petition;
@@ -42,5 +42,5 @@ int main(void)
     {
         std::cerr << e.what() << '\n';
     }
-    //delete petition;
+    delete petition;
 }

@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:38:24 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 11:58:29 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/03/05 12:28:50 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,13 @@ std::string RobotomyRequestForm::getTarget(void) const
 void RobotomyRequestForm::formAction(Bureaucrat const &executor) const
 {
     this->execute(executor);
+    srand(time(0));
+    int rndm = rand() % 2;
+    std::cout << "*** DRDRDRDRDRDRDDRDRD ***\n";
+    if (rndm == 1)
+        std::cout << this->getTarget() << " have been successfully robotomized, bipboupbip\n";
+    else if (rndm == 0)
+        std::cout << "The robotomy on " << this->getTarget() << " failed, sowwy\n";
 }
 
 std::ostream& operator<<(std::ostream &os, const RobotomyRequestForm &f)
