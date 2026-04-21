@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 14:50:29 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 13:46:11 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/04/21 14:25:04 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main(void)
         std::cout << nova;
         
         std::cout << "\n\n---INTERN IS CREATING A NEW FORM... PLEASE WAIT---\n\n";
-        rrf = someRandomIntern.makeForm("presidential pardon", "hehe");
+        rrf = someRandomIntern.makeForm("shrubbery creation", "Nova");
         std::cout << "\n" << *rrf;
     
         std::cout << "\n\n---NOVA WILL NOW TRY TO SIGN THE FORM---\n\n";
