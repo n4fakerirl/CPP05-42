@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 14:51:39 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/05 11:19:09 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/05/13 21:52:57 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
     if (grade > 150)
-        throw this->GradeTooLowException();
+        throw GradeTooLowException();
     else if (grade < 1)
-        throw this->GradeTooHighException();
+        throw GradeTooHighException();
     this->_grade = grade;
     std::cout << "Bureaucrat constructor " << this->getName() << " called\n";
 }
@@ -50,14 +50,14 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)
 void Bureaucrat::operator++(void)
 {
     if ((this->getGrade() - 1) < 1)
-        throw this->GradeTooHighException();
+        throw GradeTooHighException();
     this->_grade--;
 }
 
 void Bureaucrat::operator--(void)
 {
     if ((this->getGrade() + 1) > 150)
-        throw this->GradeTooLowException();
+        throw GradeTooLowException();
     this->_grade++;
 }
 
@@ -71,18 +71,14 @@ int Bureaucrat::getGrade(void) const
     return (this->_grade);
 }
 
-const std::exception Bureaucrat::GradeTooHighException(void) const
+const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-    const std::exception e;
-    std::cout << "error: bureaucrat grade too high!\n";
-    return (e);
+    return "error: bureaucrat grade too high!\n";
 }
 
-const std::exception Bureaucrat::GradeTooLowException(void) const
+const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-    const std::exception e;
-    std::cout << "error: bureaucrat grade too low!\n";
-    return (e);
+    return "error: bureaucrat grade too low!\n";
 }
 
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &b)

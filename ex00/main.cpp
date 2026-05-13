@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 14:50:29 by ocviller          #+#    #+#             */
-/*   Updated: 2026/03/02 11:26:15 by ocviller         ###   ########.fr       */
+/*   Updated: 2026/05/13 21:46:03 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,11 @@ int main(void)
         std::cout << paul;
         paul.operator--();
         std::cout << paul;
+        paul.operator--();
+        std::cout << paul;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-    
 }
