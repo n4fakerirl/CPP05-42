@@ -41,10 +41,6 @@ Il permet de comprendre comment sécuriser un programme en gérant les erreurs d
 
 ## 🖼️ Note du projet
 
-<p align="center">
-  <img width="198" height="168" alt="image" src="YOUR_GRADE_IMAGE_HERE" />
-</p>
-
 ---
 
 ## 🫐 Auteur
@@ -97,10 +93,6 @@ It focuses on writing robust programs by handling runtime errors while reinforci
 ---
 
 ## 🖼️ Project Grade
-
-<p align="center">
-  <img width="198" height="168" alt="image" src="YOUR_GRADE_IMAGE_HERE" />
-</p>
 
 ---
 
